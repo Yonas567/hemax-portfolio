@@ -1,124 +1,94 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, MessageSquare, Star } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, MessageSquare, Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Testimonial {
-  id: number
-  name: string
-  position: string
-  company: string
-  image: string
-  quote: string
-  rating: number
-  industry: string
+  id: number;
+  name: string;
+  position: string;
+  company: string;
+  image: string;
+  quote: string;
+  rating: number;
+  industry: string;
 }
 
 export default function TestimonialSlider() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      position: "Marketing Director",
-      company: "TechSolutions Inc.",
+      name: "Dr. Mekia",
+      position: "CEO",
+      company: "Alpha dental clinic",
       image: "/placeholder.svg?height=400&width=400",
       quote:
-        "Hemax transformed our digital presence completely. Their SEO strategies helped us rank for competitive keywords and significantly increased our organic traffic by 150%. The team's attention to detail and data-driven approach exceeded our expectations at every turn.",
+        "Working with I Digital has transformed our online presence. Their ad strategy brought in 3x more leads in just two weeks!",
       rating: 5,
-      industry: "Technology",
+      industry: "dental clinic",
     },
     {
       id: 2,
-      name: "Michael Brown",
+      name: "Dr digafe tsegaye ",
       position: "CEO",
-      company: "Retail Innovations",
+      company: "Abed dermatology",
       image: "/placeholder.svg?height=400&width=400",
       quote:
-        "The social media campaigns developed by Hemax exceeded our expectations. We saw a 200% increase in engagement and a significant boost in conversions. Their team understood our brand voice perfectly and created content that resonated with our audience.",
+        "Fast and dedicated team work along side visible transformation on my bussiness.",
       rating: 5,
-      industry: "Retail",
+      industry: "Dermatology",
     },
-    {
-      id: 3,
-      name: "Jennifer Lee",
-      position: "Digital Strategist",
-      company: "Growth Ventures",
-      image: "/placeholder.svg?height=400&width=400",
-      quote:
-        "Working with Hemax has been a game-changer for our business. Their data-driven approach to PPC helped us reduce our cost per acquisition by 40% while increasing our conversion rate. They're not just a service provider but a true partner in our growth.",
-      rating: 5,
-      industry: "Finance",
-    },
+
     {
       id: 4,
-      name: "David Rodriguez",
-      position: "Founder",
-      company: "EcoFriendly Solutions",
+      name: "Gashaw",
+      position: "CEO",
+      company: "Hospital",
       image: "/placeholder.svg?height=400&width=400",
       quote:
-        "Hemax's email marketing strategy revitalized our customer engagement. With open rates of 45% (well above industry average) and a 35% increase in repeat purchases, they've proven their expertise. Their understanding of our sustainable mission made all the difference.",
+        "Great working with tem the work ethics and determination is out of this world!!",
       rating: 5,
-      industry: "Environmental",
+      industry: "Hospital",
     },
-    {
-      id: 5,
-      name: "Alexandra Chen",
-      position: "Brand Manager",
-      company: "Luxury Lifestyle",
-      image: "/placeholder.svg?height=400&width=400",
-      quote:
-        "The premium e-commerce website Hemax designed for us perfectly captures our brand essence. The seamless UX resulted in a 65% increase in time on site and an 85% increase in mobile conversions. Their attention to detail and understanding of luxury branding is unmatched.",
-      rating: 5,
-      industry: "Luxury Retail",
-    },
-    {
-      id: 6,
-      name: "Robert Williams",
-      position: "CMO",
-      company: "HealthTech Innovations",
-      image: "/placeholder.svg?height=400&width=400",
-      quote:
-        "Hemax's content strategy established us as thought leaders in the healthcare technology space. With a 250% increase in blog traffic and 35 high-quality backlinks, our digital authority has skyrocketed. Their team's ability to translate complex topics into engaging content is remarkable.",
-      rating: 5,
-      industry: "Healthcare",
-    },
-  ]
+  ];
 
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [direction, setDirection] = useState<"left" | "right">("right")
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
 
   const nextTestimonial = () => {
-    if (isAnimating) return
-    setDirection("right")
-    setIsAnimating(true)
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+    if (isAnimating) return;
+    setDirection("right");
+    setIsAnimating(true);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    if (isAnimating) return
-    setDirection("left")
-    setIsAnimating(true)
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-  }
+    if (isAnimating) return;
+    setDirection("left");
+    setIsAnimating(true);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   useEffect(() => {
     if (isAnimating) {
       const timer = setTimeout(() => {
-        setIsAnimating(false)
-      }, 500)
-      return () => clearTimeout(timer)
+        setIsAnimating(false);
+      }, 500);
+      return () => clearTimeout(timer);
     }
-  }, [isAnimating])
+  }, [isAnimating]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextTestimonial()
-    }, 8000)
-    return () => clearInterval(interval)
-  }, [currentIndex])
+      nextTestimonial();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
     <div className="relative overflow-hidden py-12">
@@ -139,12 +109,21 @@ export default function TestimonialSlider() {
             <div className="text-center md:text-left mb-6">
               <div className="flex justify-center md:justify-start mb-2">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
+                  <Star
+                    key={i}
+                    className="h-5 w-5 fill-yellow-500 text-yellow-500"
+                  />
                 ))}
               </div>
-              <h3 className="text-xl font-bold">{testimonials[currentIndex].name}</h3>
-              <p className="text-zinc-400">{testimonials[currentIndex].position}</p>
-              <p className="text-purple-400 font-semibold">{testimonials[currentIndex].company}</p>
+              <h3 className="text-xl font-bold">
+                {testimonials[currentIndex].name}
+              </h3>
+              <p className="text-zinc-400">
+                {testimonials[currentIndex].position}
+              </p>
+              <p className="text-purple-400 font-semibold">
+                {testimonials[currentIndex].company}
+              </p>
               <span className="inline-block mt-2 text-xs font-semibold px-3 py-1 rounded-full bg-purple-900/30 text-purple-400">
                 {testimonials[currentIndex].industry}
               </span>
@@ -154,15 +133,13 @@ export default function TestimonialSlider() {
               <button
                 onClick={prevTestimonial}
                 className="p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 transition-colors"
-                aria-label="Previous testimonial"
-              >
+                aria-label="Previous testimonial">
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={nextTestimonial}
                 className="p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 transition-colors"
-                aria-label="Next testimonial"
-              >
+                aria-label="Next testimonial">
                 <ChevronRight className="h-5 w-5" />
               </button>
             </div>
@@ -172,14 +149,20 @@ export default function TestimonialSlider() {
             <div
               className={cn(
                 "relative transition-all duration-500 ease-in-out",
-                isAnimating && direction === "right" ? "translate-x-[-100%] opacity-0" : "",
-                isAnimating && direction === "left" ? "translate-x-[100%] opacity-0" : "",
-              )}
-            >
+                isAnimating && direction === "right"
+                  ? "translate-x-[-100%] opacity-0"
+                  : "",
+
+                isAnimating && direction === "left"
+                  ? "translate-x-[100%] opacity-0"
+                  : ""
+              )}>
               <div className="bg-zinc-800/80 backdrop-blur-sm p-8 rounded-xl border border-zinc-700 relative">
                 <MessageSquare className="absolute top-6 left-6 h-12 w-12 text-purple-500/20" />
                 <div className="relative">
-                  <p className="text-xl md:text-2xl italic text-zinc-300 mb-6">"{testimonials[currentIndex].quote}"</p>
+                  <p className="text-xl md:text-2xl italic text-zinc-300 mb-6">
+                    "{testimonials[currentIndex].quote}"
+                  </p>
                 </div>
               </div>
             </div>
@@ -191,12 +174,14 @@ export default function TestimonialSlider() {
             <button
               key={index}
               onClick={() => {
-                setDirection(index > currentIndex ? "right" : "left")
-                setCurrentIndex(index)
-                setIsAnimating(true)
+                setDirection(index > currentIndex ? "right" : "left");
+                setCurrentIndex(index);
+                setIsAnimating(true);
               }}
               className={`w-3 h-3 mx-1 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-purple-500 w-6" : "bg-zinc-600 hover:bg-zinc-500"
+                index === currentIndex
+                  ? "bg-purple-500 w-6"
+                  : "bg-zinc-600 hover:bg-zinc-500"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
@@ -204,6 +189,5 @@ export default function TestimonialSlider() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

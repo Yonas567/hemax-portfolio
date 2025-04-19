@@ -1,19 +1,35 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Award, Clock, Users, ArrowRight, Briefcase, GraduationCap, Heart } from "lucide-react"
-import ScrollReveal from "@/components/scroll-reveal"
-import ParallaxSection from "@/components/parallax-section"
-import AnimatedCounter from "@/components/animated-counter"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Award,
+  Clock,
+  Users,
+  ArrowRight,
+  Briefcase,
+  GraduationCap,
+  Heart,
+} from "lucide-react";
+import ScrollReveal from "@/components/scroll-reveal";
+import ParallaxSection from "@/components/parallax-section";
+import AnimatedCounter from "@/components/animated-counter";
+import ClientCarousel from "@/components/client-carasoul";
 
 export default function AboutPage() {
+  const cultureImages = [
+    "/collaboration.jpg",
+    "/learning.jpg",
+    "/worklife.jpg",
+
+    "/clue.jpg",
+  ];
   return (
     <div className="pt-16 bg-black text-white">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1920"
+            src="/abel.JPG"
             alt="About Hemax"
             fill
             className="object-cover opacity-30"
@@ -29,10 +45,13 @@ export default function AboutPage() {
                   About Us
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About Hemax</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                About Hemax
+              </h1>
               <p className="text-xl text-zinc-400">
-                We're a team of digital marketing experts passionate about helping businesses grow their online presence
-                and achieve their goals.
+                We're a team of digital marketing experts passionate about
+                helping businesses grow their online presence and achieve their
+                goals.
               </p>
             </div>
           </ScrollReveal>
@@ -48,27 +67,29 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4 text-zinc-300">
                   <p>
-                    Founded in 2015, Hemax Digital Marketing Agency was born out of a passion for helping businesses
-                    navigate the complex digital landscape. Our founders recognized that many companies were struggling
-                    to effectively leverage digital channels to grow their businesses.
+                    Founded in 2015, Hemax Digital Marketing Agency was born out
+                    of a passion for helping businesses navigate the complex
+                    digital landscape. Our founders recognized that many
+                    companies were struggling to effectively leverage digital
+                    channels to grow their businesses.
                   </p>
                   <p>
-                    What started as a small team of digital enthusiasts has grown into a full-service agency with
-                    expertise across all digital marketing disciplines. Throughout our journey, we've remained committed
-                    to our core values of innovation, transparency, and results-driven strategies.
-                  </p>
-                  <p>
-                    Today, we're proud to have helped hundreds of clients across various industries achieve their
-                    business objectives through strategic digital marketing solutions.
+                    What started as a small team of digital enthusiasts has
+                    grown into a full-service agency with expertise across all
+                    digital marketing disciplines. Throughout our journey, we've
+                    remained committed to our core values of innovation,
+                    transparency, and results-driven strategies.
                   </p>
                 </div>
               </div>
             </ScrollReveal>
-            <ScrollReveal direction="left" className="order-first md:order-last">
+            <ScrollReveal
+              direction="left"
+              className="order-first md:order-last">
               <div className="relative">
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-30 blur-xl animate-pulse"></div>
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="/abel.JPG"
                   alt="Our Story"
                   width={600}
                   height={600}
@@ -86,7 +107,9 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
-              <p className="text-zinc-400 max-w-2xl mx-auto">From humble beginnings to industry leadership</p>
+              <p className="text-zinc-400 max-w-2xl mx-auto">
+                From humble beginnings to industry leadership
+              </p>
             </div>
           </ScrollReveal>
 
@@ -97,56 +120,52 @@ export default function AboutPage() {
             <div className="space-y-12">
               {[
                 {
-                  year: "2015",
+                  year: "2021",
                   title: "Humble Beginnings",
                   description:
-                    "Hemax was founded with a vision to help small businesses navigate the digital landscape.",
-                  image: "/placeholder.svg?height=300&width=400",
+                    "i dgital was founded with a vision to help small businesses navigate the digital landscape.",
+                  image: "/first.jpg",
                 },
+
                 {
-                  year: "2017",
-                  title: "Expanding Services",
-                  description:
-                    "We expanded our service offerings to include social media marketing and PPC advertising.",
-                  image: "/placeholder.svg?height=300&width=400",
-                },
-                {
-                  year: "2019",
+                  year: "2022",
                   title: "Growing Team",
                   description:
                     "Our team grew to 25 specialists, allowing us to serve more clients across various industries.",
-                  image: "/placeholder.svg?height=300&width=400",
-                },
-                {
-                  year: "2021",
-                  title: "Industry Recognition",
-                  description:
-                    "Hemax received its first industry award for excellence in digital marketing strategies.",
-                  image: "/placeholder.svg?height=300&width=400",
+                  image: "/growingteam.jpg",
                 },
                 {
                   year: "2023",
-                  title: "Global Expansion",
+                  title: "acceptance",
+                  description: "i digital accepted by many companies.",
+                  image: "/growth.jpg",
+                },
+                {
+                  year: "2024",
+                  title: "branch Expansion",
                   description:
-                    "We expanded our operations to serve clients internationally, with a focus on innovative digital solutions.",
-                  image: "/placeholder.svg?height=300&width=400",
+                    "We expanded our operations to serve clients in different towns, with a focus on innovative digital solutions.",
+                  image: "/global.jpg",
                 },
               ].map((milestone, index) => (
                 <div
                   key={index}
-                  className={`relative flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center`}
-                >
+                  className={`relative flex flex-col ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  } items-center`}>
                   <ScrollReveal
                     direction={index % 2 === 0 ? "left" : "right"}
-                    className="w-full md:w-1/2 px-6 md:px-12"
-                  >
+                    className="w-full md:w-1/2 px-6 md:px-12">
                     <div
-                      className={`bg-zinc-900 p-6 rounded-xl border border-zinc-800 ${index % 2 === 0 ? "md:mr-6" : "md:ml-6"}`}
-                    >
+                      className={`bg-zinc-900 p-6 rounded-xl border border-zinc-800 ${
+                        index % 2 === 0 ? "md:mr-6" : "md:ml-6"
+                      }`}>
                       <div className="inline-block px-3 py-1 bg-purple-900/30 text-purple-400 text-sm font-semibold rounded-full mb-3">
                         {milestone.year}
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{milestone.title}</h3>
+                      <h3 className="text-xl font-bold mb-3">
+                        {milestone.title}
+                      </h3>
                       <p className="text-zinc-400">{milestone.description}</p>
                     </div>
                   </ScrollReveal>
@@ -156,9 +175,9 @@ export default function AboutPage() {
 
                   <ScrollReveal
                     direction={index % 2 === 0 ? "right" : "left"}
-                    className="w-full md:w-1/2 mt-6 md:mt-0 px-6 md:px-12"
-                  >
-                    <div className={`${index % 2 === 0 ? "md:ml-6" : "md:mr-6"}`}>
+                    className="w-full md:w-1/2 mt-6 md:mt-0 px-6 md:px-12">
+                    <div
+                      className={`${index % 2 === 0 ? "md:ml-6" : "md:mr-6"}`}>
                       <Image
                         src={milestone.image || "/placeholder.svg"}
                         alt={milestone.title}
@@ -182,7 +201,8 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
-                These principles guide everything we do and define how we work with our clients
+                These principles guide everything we do and define how we work
+                with our clients
               </p>
             </div>
           </ScrollReveal>
@@ -213,8 +233,12 @@ export default function AboutPage() {
                   <div className="mx-auto mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:text-purple-400">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center">{value.title}</h3>
-                  <p className="text-zinc-400 text-center">{value.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-center">
+                    {value.title}
+                  </h3>
+                  <p className="text-zinc-400 text-center">
+                    {value.description}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -223,14 +247,15 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <ParallaxSection>
+      {/* <ParallaxSection>
         <section className="py-20 bg-black">
           <div className="container px-4 md:px-6">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
                 <p className="text-zinc-400 max-w-2xl mx-auto">
-                  Our diverse team of experts brings together a wealth of experience and creativity
+                  Our diverse team of experts brings together a wealth of
+                  experience and creativity
                 </p>
               </div>
             </ScrollReveal>
@@ -278,7 +303,9 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold group-hover:text-purple-400 transition-colors">{member.name}</h3>
+                      <h3 className="text-xl font-bold group-hover:text-purple-400 transition-colors">
+                        {member.name}
+                      </h3>
                       <p className="text-zinc-400">{member.role}</p>
                     </div>
                   </div>
@@ -288,7 +315,10 @@ export default function AboutPage() {
 
             <ScrollReveal delay={400}>
               <div className="mt-12 text-center">
-                <Button asChild variant="outline" className="border-zinc-700 hover:bg-zinc-800">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-zinc-700 hover:bg-zinc-800">
                   <Link href="/careers">
                     Join Our Team <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -297,7 +327,7 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
         </section>
-      </ParallaxSection>
+      </ParallaxSection> */}
 
       {/* Company Culture */}
       <section className="py-20 bg-zinc-900">
@@ -307,8 +337,9 @@ export default function AboutPage() {
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold mb-4">Our Company Culture</h2>
                 <p className="text-zinc-400">
-                  At Hemax, we believe that a positive and inclusive work environment leads to better results for our
-                  clients. Our culture is built on these key principles:
+                  At Hemax, we believe that a positive and inclusive work
+                  environment leads to better results for our clients. Our
+                  culture is built on these key principles:
                 </p>
 
                 <div className="space-y-4">
@@ -316,22 +347,26 @@ export default function AboutPage() {
                     {
                       icon: <Users className="h-6 w-6 text-purple-500" />,
                       title: "Collaboration & Teamwork",
-                      description: "We work together across disciplines to deliver integrated solutions.",
+                      description:
+                        "We work together across disciplines to deliver integrated solutions.",
                     },
                     {
                       icon: <GraduationCap className="h-6 w-6 text-pink-500" />,
                       title: "Continuous Learning",
-                      description: "We invest in ongoing education to stay at the forefront of digital marketing.",
+                      description:
+                        "We invest in ongoing education to stay at the forefront of digital marketing.",
                     },
                     {
                       icon: <Heart className="h-6 w-6 text-purple-500" />,
                       title: "Work-Life Balance",
-                      description: "We promote well-being and balance to foster creativity and productivity.",
+                      description:
+                        "We promote well-being and balance to foster creativity and productivity.",
                     },
                     {
                       icon: <Briefcase className="h-6 w-6 text-pink-500" />,
                       title: "Client-Centric Approach",
-                      description: "We put our clients' success at the center of everything we do.",
+                      description:
+                        "We put our clients' success at the center of everything we do.",
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4 group">
@@ -339,7 +374,9 @@ export default function AboutPage() {
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold group-hover:text-purple-400 transition-colors">{item.title}</h3>
+                        <h3 className="font-semibold group-hover:text-purple-400 transition-colors">
+                          {item.title}
+                        </h3>
                         <p className="text-zinc-400">{item.description}</p>
                       </div>
                     </div>
@@ -350,10 +387,10 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="grid grid-cols-2 gap-4">
-                {Array.from({ length: 4 }).map((_, index) => (
+                {cultureImages.map((src, index) => (
                   <div key={index} className="overflow-hidden rounded-xl">
                     <Image
-                      src={`/placeholder.svg?height=300&width=300`}
+                      src={src}
                       alt={`Company Culture ${index + 1}`}
                       width={300}
                       height={300}
@@ -374,7 +411,8 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Growth Journey</h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
-                We're proud of how far we've come and excited about where we're headed
+                We're proud of how far we've come and excited about where we're
+                headed
               </p>
             </div>
           </ScrollReveal>
@@ -399,32 +437,7 @@ export default function AboutPage() {
 
       {/* Partners Section */}
       <section className="py-20 bg-black">
-        <div className="container px-4 md:px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Partners</h2>
-              <p className="text-zinc-400 max-w-2xl mx-auto">
-                We collaborate with industry leaders to deliver exceptional results
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <ScrollReveal key={index} delay={index * 50}>
-                <div className="bg-zinc-900 p-6 rounded-xl flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500">
-                  <Image
-                    src="/placeholder-logo.svg"
-                    alt={`Partner ${index + 1}`}
-                    width={120}
-                    height={60}
-                    className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
+        <ClientCarousel />
       </section>
 
       {/* CTA Section */}
@@ -435,21 +448,22 @@ export default function AboutPage() {
 
         <div className="container relative z-10 px-4 md:px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Work With Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Work With Us?
+            </h2>
             <p className="text-zinc-200 max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help your business achieve its digital marketing goals.
+              Let's discuss how we can help your business achieve its digital
+              marketing goals.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-white text-purple-900 hover:bg-zinc-100 rounded-full px-8 transform transition-transform hover:scale-105"
-            >
+              className="bg-white text-purple-900 hover:bg-zinc-100 rounded-full px-8 transform transition-transform hover:scale-105">
               <Link href="/contact">Contact Us Today</Link>
             </Button>
           </ScrollReveal>
         </div>
       </section>
     </div>
-  )
+  );
 }
-

@@ -1,11 +1,21 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Award, CheckCircle, ChevronRight, MousePointerClick, TrendingUp, Trophy, Zap } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import TestimonialSlider from "@/components/testimonial-slider"
-import ScrollReveal from "@/components/scroll-reveal"
-import AnimatedCounter from "@/components/animated-counter"
-import ParallaxSection from "@/components/parallax-section"
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle,
+  ChevronRight,
+  MousePointerClick,
+  TrendingUp,
+  Trophy,
+  Zap,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import TestimonialSlider from "@/components/testimonial-slider";
+import ScrollReveal from "@/components/scroll-reveal";
+import AnimatedCounter from "@/components/animated-counter";
+import ParallaxSection from "@/components/parallax-section";
+import ClientCarousel from "@/components/client-carasoul";
 
 export default function Home() {
   return (
@@ -14,10 +24,10 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/social.JPG"
             alt="Digital Marketing Background"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"></div>
@@ -26,20 +36,12 @@ export default function Home() {
         <div className="container relative z-10 px-4 md:px-6 space-y-10 text-center">
           <ScrollReveal>
             <div className="space-y-4">
-              <div className="inline-block animate-bounce mb-4">
-                <span className="px-4 py-1 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-400 text-sm font-semibold border border-purple-500/20">
-                  Award-Winning Digital Marketing Agency
-                </span>
-              </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 animate-pulse">
-                  HEMAX
-                </span>{" "}
-                Digital Marketing
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-[#febc05] animate-pulse">
+                  Clicks Into Clients.
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto">
-                Transforming brands with innovative digital strategies that drive growth and engagement
-              </p>
+              <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto"></p>
             </div>
           </ScrollReveal>
 
@@ -48,8 +50,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-8 group transition-all duration-300 transform hover:scale-105"
-              >
+                className="bg-gradient-to-r from-[#280348] to-[#febc05] hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-8 group transition-all duration-300 transform hover:scale-105">
                 <Link href="/contact">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -59,8 +60,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-zinc-700 text-white hover:bg-zinc-900 rounded-full px-8 transition-all duration-300 transform hover:scale-105"
-              >
+                className="border-zinc-700 text-white hover:bg-zinc-900 rounded-full px-8 transition-all duration-300 transform hover:scale-105">
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -77,9 +77,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Our Services
+              </h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
-                We offer comprehensive digital marketing solutions tailored to your business needs
+                We offer comprehensive digital marketing solutions tailored to
+                your business needs
               </p>
             </div>
           </ScrollReveal>
@@ -95,10 +98,13 @@ export default function Home() {
               {
                 icon: <Zap className="h-10 w-10 text-pink-500" />,
                 title: "Social Media Marketing",
-                description: "Engage your audience and build brand loyalty through strategic social media campaigns.",
+                description:
+                  "Engage your audience and build brand loyalty through strategic social media campaigns.",
               },
               {
-                icon: <MousePointerClick className="h-10 w-10 text-purple-500" />,
+                icon: (
+                  <MousePointerClick className="h-10 w-10 text-purple-500" />
+                ),
                 title: "PPC Advertising",
                 description:
                   "Maximize ROI with targeted pay-per-click campaigns that convert prospects into customers.",
@@ -113,9 +119,9 @@ export default function Home() {
                   <p className="text-zinc-400 mb-4">{service.description}</p>
                   <Link
                     href="/services"
-                    className="inline-flex items-center text-purple-400 hover:text-purple-300 group-hover:underline"
-                  >
-                    Learn more <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    className="inline-flex items-center text-purple-400 hover:text-purple-300 group-hover:underline">
+                    Learn more{" "}
+                    <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -129,7 +135,9 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact By The Numbers</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Our Impact By The Numbers
+              </h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
                 We deliver measurable results that drive business growth
               </p>
@@ -138,10 +146,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: 250, suffix: "+", label: "Clients Served" },
-              { value: 500, suffix: "+", label: "Projects Completed" },
+              { value: 30, suffix: "+", label: "Clients Served" },
+              { value: 200, suffix: "+", label: "Projects Completed" },
               { value: 150, suffix: "%", label: "Average ROI" },
-              { value: 15, suffix: "+", label: "Industry Awards" },
+              { value: 10, suffix: "+", label: "Industry Awards" },
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 150}>
                 <div className="bg-zinc-800/50 backdrop-blur-sm p-8 rounded-xl border border-zinc-700 hover:border-purple-500/50 transition-all duration-300">
@@ -162,21 +170,23 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-30 blur-xl animate-pulse"></div>
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="/socialmedia.JPG"
                   alt="Digital Marketing Team"
                   width={600}
                   height={600}
-                  className="rounded-xl relative z-10"
+                  className="rounded-xl relative z-10 opacity-70"
                 />
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold">Why Choose Hemax?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Why Choose I-DIGITAL?
+                </h2>
                 <p className="text-zinc-400">
-                  We combine creativity, data analytics, and industry expertise to deliver exceptional results for our
-                  clients.
+                  We combine creativity, data analytics, and industry expertise
+                  to deliver exceptional results for our clients.
                 </p>
 
                 <div className="space-y-4">
@@ -188,15 +198,16 @@ export default function Home() {
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3 group">
                       <CheckCircle className="h-6 w-6 text-purple-500 shrink-0 mt-0.5 group-hover:text-purple-400 transition-colors" />
-                      <p className="group-hover:text-white transition-colors">{item}</p>
+                      <p className="group-hover:text-white transition-colors">
+                        {item}
+                      </p>
                     </div>
                   ))}
                 </div>
 
                 <Button
                   asChild
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-8 mt-4 transform transition-transform hover:scale-105"
-                >
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-8 mt-4 transform transition-transform hover:scale-105">
                   <Link href="/about">About Us</Link>
                 </Button>
               </div>
@@ -210,9 +221,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                What Our Clients Say
+              </h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
-                Don't just take our word for it - hear from some of our satisfied clients
+                Don't just take our word for it - hear from some of our
+                satisfied clients
               </p>
             </div>
           </ScrollReveal>
@@ -226,9 +240,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Awards & Recognition</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Awards & Recognition
+              </h2>
               <p className="text-zinc-400 max-w-2xl mx-auto">
-                Our commitment to excellence has been recognized by industry leaders
+                Our commitment to excellence has been recognized by industry
+                leaders
               </p>
             </div>
           </ScrollReveal>
@@ -279,8 +296,12 @@ export default function Home() {
                       {award.icon}
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg group-hover:text-yellow-400 transition-colors">{award.title}</h3>
-                      <p className="text-zinc-400 text-sm">{award.organization}</p>
+                      <h3 className="font-bold text-lg group-hover:text-yellow-400 transition-colors">
+                        {award.title}
+                      </h3>
+                      <p className="text-zinc-400 text-sm">
+                        {award.organization}
+                      </p>
                     </div>
                   </div>
                   <div className="ml-16 pl-2 border-l-2 border-zinc-700">
@@ -300,44 +321,42 @@ export default function Home() {
             <ScrollReveal>
               <div className="flex flex-col md:flex-row justify-between items-center mb-16">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Insights</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Latest Insights
+                  </h2>
                   <p className="text-zinc-400 max-w-2xl">
-                    Stay updated with the latest trends and strategies in digital marketing
+                    Stay updated with the latest trends and strategies in
+                    digital marketing
                   </p>
                 </div>
-                <Button asChild variant="outline" className="mt-4 md:mt-0">
-                  <Link href="/blog">
-                    View All Articles <ChevronRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
             </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "10 SEO Strategies That Actually Work in 2023",
+                  title: "How Social Media Can Help Your Business Grow",
                   excerpt:
-                    "Discover the most effective SEO techniques that are driving results in today's digital landscape.",
-                  category: "SEO",
-                  date: "June 15, 2023",
-                  image: "/placeholder.svg?height=400&width=600",
-                },
-                {
-                  title: "How to Create a Social Media Strategy That Converts",
-                  excerpt:
-                    "Learn how to develop a social media plan that not only engages your audience but drives measurable conversions.",
+                    "Learn simple ways to use social media to get more customers and build trust online.",
                   category: "Social Media",
-                  date: "May 28, 2023",
-                  image: "/placeholder.svg?height=400&width=600",
+                  date: "March 20, 2025",
+                  image: "/medias.jpg",
                 },
                 {
-                  title: "The Future of PPC: AI-Driven Advertising",
+                  title: "5 Easy Tips to Improve Your Online Ads",
                   excerpt:
-                    "Explore how artificial intelligence is revolutionizing pay-per-click advertising and how to stay ahead of the curve.",
-                  category: "PPC",
-                  date: "April 10, 2023",
-                  image: "/placeholder.svg?height=400&width=600",
+                    "Discover simple ad tricks that can help you reach more people and get better results.",
+                  category: "Online Ads",
+                  date: "February 28, 2025",
+                  image: "/adds.jpg",
+                },
+                {
+                  title: "Why Every Business Needs a Digital Marketing Plan",
+                  excerpt:
+                    "See how a clear plan can help you grow your brand, save time, and increase sales.",
+                  category: "Marketing",
+                  date: "January 30, 2025",
+                  image: "/plan.png",
                 },
               ].map((post, index) => (
                 <ScrollReveal key={index} delay={index * 150}>
@@ -360,11 +379,12 @@ export default function Home() {
                       <h3 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-zinc-400 mb-4 flex-grow">{post.excerpt}</p>
+                      <p className="text-zinc-400 mb-4 flex-grow">
+                        {post.excerpt}
+                      </p>
                       <Link
                         href="/blog"
-                        className="text-purple-400 hover:text-purple-300 inline-flex items-center mt-auto"
-                      >
+                        className="text-purple-400 hover:text-purple-300 inline-flex items-center mt-auto">
                         Read More{" "}
                         <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
@@ -376,6 +396,9 @@ export default function Home() {
           </div>
         </section>
       </ParallaxSection>
+      <ScrollReveal className="pb-20">
+        <ClientCarousel />
+      </ScrollReveal>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900 relative overflow-hidden">
@@ -385,15 +408,17 @@ export default function Home() {
 
         <div className="container relative z-10 px-4 md:px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Digital Presence?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Transform Your Digital Presence?
+            </h2>
             <p className="text-zinc-200 max-w-2xl mx-auto mb-8">
-              Let's collaborate to create a digital marketing strategy that drives real results for your business.
+              Let's collaborate to create a digital marketing strategy that
+              drives real results for your business.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-white text-purple-900 hover:bg-zinc-100 rounded-full px-8 transform transition-transform hover:scale-105"
-            >
+              className="bg-white text-purple-900 hover:bg-zinc-100 rounded-full px-8 transform transition-transform hover:scale-105">
               <Link href="/contact">Get in Touch</Link>
             </Button>
           </ScrollReveal>
@@ -401,35 +426,6 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-black">
-        <div className="container px-4 md:px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Technology Partners</h2>
-              <p className="text-zinc-400 max-w-2xl mx-auto">
-                We work with industry-leading platforms to deliver exceptional results
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="bg-zinc-900 p-6 rounded-xl flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 hover:shadow-lg hover:shadow-purple-500/10">
-                  <Image
-                    src="/placeholder-logo.svg"
-                    alt={`Partner ${index + 1}`}
-                    width={120}
-                    height={60}
-                    className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
-  )
+  );
 }
-

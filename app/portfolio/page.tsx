@@ -12,81 +12,121 @@ import {
 import ScrollReveal from "@/components/scroll-reveal";
 import AnimatedCounter from "@/components/animated-counter";
 import ParallaxSection from "@/components/parallax-section";
+import ClientCarousel from "@/components/client-carasoul";
 
 export default function PortfolioPage() {
   const portfolioItems = [
     {
-      title: "TechSolutions Rebrand",
-      category: "Branding & SEO",
+      title: "TechSolutions TikTok & Instagram Rebrand",
+      category: "Social Media Marketing & Branding",
       description:
-        "Complete digital rebrand and SEO strategy that increased organic traffic by 150% in 6 months.",
+        "A dynamic rebrand through targeted TikTok ads and Instagram control strategies, elevating the brand’s presence and engagement in the digital space.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "150% increase in organic traffic",
-        "200% increase in lead generation",
-        "45% reduction in bounce rate",
+        "200% increase in TikTok ad engagement",
+        "150% increase in Instagram reach and follower growth",
+        "45% reduction in bounce rate through TikTok-driven traffic",
       ],
     },
     {
-      title: "Retail Innovations Campaign",
-      category: "Social Media Marketing",
+      title: "Retail Innovations Campaign: Facebook Boost",
+      category: "Social Media Marketing & Facebook Ads",
       description:
-        "Strategic social media campaign across multiple platforms that boosted engagement and sales.",
+        "A focused Facebook campaign that strategically boosted sales and engagement by using Facebook Ads, complemented by TikTok engagement.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "300% increase in social engagement",
-        "25% increase in online sales",
-        "45,000 new followers",
+        "300% increase in Facebook ad engagement",
+        "25% increase in sales from Facebook Ads and TikTok interaction",
+        "45,000 new followers on Facebook and Instagram",
       ],
     },
     {
-      title: "Growth Ventures PPC",
-      category: "PPC Advertising",
+      title: "Growth Ventures Targeted TikTok & Facebook Ads",
+      category: "PPC Advertising & Social Media Control",
       description:
-        "Targeted PPC campaign that significantly reduced cost per acquisition and increased ROI.",
+        "A combined TikTok and Facebook Ads campaign, effectively reducing cost per acquisition while maximizing ROI through targeted paid content.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "40% reduction in cost per acquisition",
-        "85% increase in conversion rate",
-        "120% increase in ROI",
+        "40% reduction in cost per acquisition through TikTok and Facebook Ads",
+        "85% increase in conversion rates from Facebook boosted posts",
+        "120% increase in ROI through a hybrid TikTok & Facebook strategy",
       ],
     },
     {
-      title: "EcoFriendly Email Campaign",
-      category: "Email Marketing",
+      title: "EcoFriendly Instagram Control & Email Campaign",
+      category: "Email Marketing & Instagram Strategy",
       description:
-        "Personalized email marketing strategy that revitalized customer engagement and boosted sales.",
+        "An Instagram strategy alongside a personalized email campaign, boosting customer engagement and repeat purchases through targeted content.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "45% open rate (industry avg: 20%)",
-        "12% click-through rate",
-        "35% increase in repeat purchases",
+        "45% open rate for email campaigns (industry avg: 20%)",
+        "12% click-through rate from Instagram-driven traffic",
+        "35% increase in repeat purchases thanks to Instagram campaigns and email retargeting",
       ],
     },
     {
-      title: "Luxury Brand Website",
-      category: "Web Design & Development",
+      title: "Luxury Brand Facebook Ads & TikTok Strategy",
+      category: "Social Media Marketing & Web Ads",
       description:
-        "Premium e-commerce website with seamless UX that elevated the brand and increased conversions.",
+        "A seamless integration of Facebook boosted posts and TikTok ad strategy, optimizing the brand’s reach and conversions both on mobile and desktop.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "65% increase in time on site",
-        "45% reduction in cart abandonment",
-        "85% increase in mobile conversions",
+        "65% increase in website traffic from TikTok and Facebook campaigns",
+        "45% reduction in cart abandonment through TikTok retargeting",
+        "85% increase in mobile conversions thanks to Facebook Ads and TikTok-driven content",
       ],
     },
     {
-      title: "HealthTech Content Strategy",
-      category: "Content Marketing",
+      title: "HealthTech Instagram Growth & Facebook Boost",
+      category: "Content Marketing & Social Media Ads",
       description:
-        "Comprehensive content strategy that established the client as an industry thought leader.",
+        "A comprehensive content marketing strategy powered by Instagram control and Facebook boosted posts, positioning the brand as an industry leader.",
       image: "/placeholder.svg?height=600&width=800",
       results: [
-        "250% increase in blog traffic",
-        "35 high-quality backlinks generated",
-        "15 media mentions",
+        "250% increase in blog traffic driven from Instagram and Facebook",
+        "35 high-quality backlinks generated through Facebook shares and Instagram mentions",
+        "15 media mentions with increased press coverage via Facebook Ads",
       ],
     },
+  ];
+  const clients = [
+    { name: "Alpha Dental", image: "/alpha.PNG" },
+
+    { name: "Abed Derma", image: "/abeds.jpg" },
+    { name: "Awash General", image: "/awash.jpg" },
+
+    { name: "Tsedi Makeup", image: "/logos/tsedi-makeup.svg" },
+    { name: "Platinum Dental", image: "/platinium.jpg" },
+
+    { name: "Matty Vello", image: "/logos/matty-vello.svg" },
+    { name: "Nexus Physiotherapy", image: "/nexus.jpg" },
+    {
+      name: "Hammerenoh Speciality Dental",
+      image: "/logos/hammerenoh-speciality-dental.svg",
+    },
+
+    { name: "Mahi Makeup", image: "/mahi.jpg" },
+    {
+      name: "Yanet General Hospital",
+      image: "/yanet.jpg",
+    },
+
+    { name: "Acl Medical Center", image: "/acl.jpg" },
+
+    {
+      name: "Betezatha General Hospital",
+      image: "/betezata.jpg",
+    },
+
+    { name: "Seben Speciality", image: "/seben.jpg" },
+
+    {
+      name: "Amin General Hospital",
+      image: "/amin.jpg",
+    },
+    { name: "Benas Dental", image: "/benas.jpg" },
+
+    { name: "Kibrhome Furnitures", image: "/kibrom.jpg" },
   ];
 
   return (
@@ -157,14 +197,14 @@ export default function PortfolioPage() {
               },
               {
                 value: 40,
-                suffix: "%",
-                label: "Cost Per Acquisition Reduction",
+                suffix: "+",
+                label: "Happy clients",
                 icon: (
                   <Award className="h-8 w-8 text-purple-500 mx-auto mb-4" />
                 ),
               },
               {
-                value: 200,
+                value: 300,
                 suffix: "+",
                 label: "Successful Projects",
                 icon: (
@@ -181,7 +221,7 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
+      <ClientCarousel />
       {/* Portfolio Grid */}
       <section className="py-20 bg-zinc-900">
         <div className="container px-4 md:px-6">
@@ -197,30 +237,6 @@ export default function PortfolioPage() {
             {portfolioItems.map((item, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <div className="group bg-zinc-800 rounded-xl overflow-hidden border border-zinc-700 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 h-full">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="bg-black/50 border-white/20 text-white hover:bg-black/70">
-                        <Link
-                          href={`/portfolio/${item.title
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")}`}
-                          className="flex items-center gap-2">
-                          View Case Study{" "}
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
                   <div className="p-6">
                     <div className="mb-3">
                       <span className="text-xs font-semibold px-3 py-1 rounded-full bg-purple-900/30 text-purple-400">
@@ -265,7 +281,7 @@ export default function PortfolioPage() {
                 </h2>
                 <p className="text-zinc-400 max-w-2xl mx-auto">
                   A closer look at one of our most successful client
-                  partnerships
+                  partnerships on TikTok
                 </p>
               </div>
             </ScrollReveal>
@@ -275,8 +291,8 @@ export default function PortfolioPage() {
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-30 blur-xl animate-pulse"></div>
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
-                    alt="Featured Case Study"
+                    src="/success.JPG?height=600&width=600"
+                    alt="Abed Dermatology TikTok Growth"
                     width={600}
                     height={600}
                     className="rounded-xl relative z-10"
@@ -287,16 +303,13 @@ export default function PortfolioPage() {
               <ScrollReveal direction="right">
                 <div className="space-y-6">
                   <div className="inline-block px-3 py-1 bg-purple-900/30 text-purple-400 text-sm font-semibold rounded-full mb-3">
-                    E-commerce Success
+                    TikTok Growth Success
                   </div>
-                  <h3 className="text-2xl font-bold">
-                    LuxuryGoods Online Store
-                  </h3>
+                  <h3 className="text-2xl font-bold">Abed Dermatology</h3>
                   <p className="text-zinc-400">
-                    LuxuryGoods came to us with a beautiful product line but
-                    struggling online sales. Their website wasn't converting
-                    visitors, and their digital marketing efforts weren't
-                    reaching the right audience.
+                    Abed Dermatology partnered with us to break through on
+                    TikTok. They had a decent following, but they needed help
+                    scaling rapidly while maintaining authentic engagement.
                   </p>
 
                   <div className="space-y-4">
@@ -305,8 +318,9 @@ export default function PortfolioPage() {
                         The Challenge
                       </h4>
                       <p className="text-zinc-300">
-                        Low conversion rate (1.2%), high cart abandonment (78%),
-                        and ineffective ad spend with poor targeting.
+                        Slow growth and lack of viral momentum on TikTok. They
+                        had 12.8k followers but weren’t getting consistent
+                        visibility or engagement.
                       </p>
                     </div>
 
@@ -315,9 +329,9 @@ export default function PortfolioPage() {
                         Our Solution
                       </h4>
                       <p className="text-zinc-300">
-                        Complete website redesign with UX optimization, targeted
-                        PPC campaigns, and email marketing automation for
-                        abandoned carts.
+                        A TikTok-focused strategy with viral hook content,
+                        trending audio integration, consistent publishing, and
+                        strategic boosts on top-performing videos.
                       </p>
                     </div>
 
@@ -329,33 +343,24 @@ export default function PortfolioPage() {
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-purple-500 shrink-0 mt-0.5" />
                           <span className="text-zinc-300">
-                            320% increase in conversion rate
+                            From 12.8k to 72k followers in 4 months
                           </span>
                         </li>
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-purple-500 shrink-0 mt-0.5" />
                           <span className="text-zinc-300">
-                            45% reduction in cart abandonment
+                            Over 5 viral videos with 500k+ views each
                           </span>
                         </li>
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-purple-500 shrink-0 mt-0.5" />
                           <span className="text-zinc-300">
-                            215% increase in ROAS (Return on Ad Spend)
+                            Consistent 2x–4x ROI on boosted TikTok posts
                           </span>
                         </li>
                       </ul>
                     </div>
                   </div>
-
-                  <Button
-                    asChild
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-8 mt-4 transform transition-transform hover:scale-105">
-                    <Link href="/portfolio/luxurygoods-online-store">
-                      Read Full Case Study{" "}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
                 </div>
               </ScrollReveal>
             </div>
@@ -377,16 +382,19 @@ export default function PortfolioPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <ScrollReveal key={index} delay={index * 50}>
-                <div className="flex items-center justify-center p-6 bg-zinc-800 rounded-xl hover:bg-zinc-800/80 transition-all duration-300 grayscale hover:grayscale-0">
+            {clients.map((client, index) => (
+              <ScrollReveal key={index} delay={index * 40}>
+                <div className="flex flex-col items-center justify-center p-1 bg-zinc-800 rounded-xl hover:bg-zinc-800/80 transition-all duration-300  hover:grayscale-20">
                   <Image
-                    src="/placeholder-logo.svg"
-                    alt={`Client Logo ${index + 1}`}
+                    src={client.image}
+                    alt={`${client.name} Logo`}
                     width={120}
                     height={60}
-                    className="opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className=" hover:opacity-100 transition-opacity duration-300"
                   />
+                  <p className="mt-2 text-sm text-zinc-300 text-center">
+                    {client.name}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -410,50 +418,26 @@ export default function PortfolioPage() {
             {[
               {
                 quote:
-                  "Hemax transformed our digital presence completely. Their SEO strategies helped us rank for competitive keywords and significantly increased our organic traffic.",
-                name: "Sarah Johnson",
-                position: "Marketing Director",
-                company: "TechSolutions Inc.",
-                image: "/placeholder.svg?height=100&width=100",
-              },
-              {
-                quote:
-                  "The social media campaigns developed by Hemax exceeded our expectations. We saw a 200% increase in engagement and a significant boost in conversions.",
-                name: "Michael Brown",
+                  "Great working with them. The work ethics and determination is out of this world!!",
+                name: "Gashaw",
                 position: "CEO",
-                company: "Retail Innovations",
+                company: "Betezatha",
                 image: "/placeholder.svg?height=100&width=100",
               },
               {
                 quote:
-                  "Working with Hemax has been a game-changer for our business. Their data-driven approach to PPC helped us reduce our cost per acquisition by 40%.",
-                name: "Jennifer Lee",
-                position: "Digital Strategist",
-                company: "Growth Ventures",
+                  "Fast and dedicated team work alongside visible transformation on my business.",
+                name: "Dr. Digafe Tsegaye",
+                position: "CEO",
+                company: "Abed Dermatology",
                 image: "/placeholder.svg?height=100&width=100",
               },
               {
                 quote:
-                  "Hemax's email marketing strategy revitalized our customer engagement. With open rates of 45% and a 35% increase in repeat purchases, they've proven their expertise.",
-                name: "David Rodriguez",
-                position: "Founder",
-                company: "EcoFriendly Solutions",
-                image: "/placeholder.svg?height=100&width=100",
-              },
-              {
-                quote:
-                  "The premium e-commerce website Hemax designed for us perfectly captures our brand essence. The seamless UX resulted in a 65% increase in time on site.",
-                name: "Alexandra Chen",
-                position: "Brand Manager",
-                company: "Luxury Lifestyle",
-                image: "/placeholder.svg?height=100&width=100",
-              },
-              {
-                quote:
-                  "Hemax's content strategy established us as thought leaders in the healthcare technology space. With a 250% increase in blog traffic, our digital authority has skyrocketed.",
-                name: "Robert Williams",
-                position: "CMO",
-                company: "HealthTech Innovations",
+                  "Working with I Digital has transformed our online presence. Their ad strategy brought in 3x more leads in just two weeks!",
+                name: "Dr. Mekia",
+                position: "CEO",
+                company: "Alpha Dental Clinic",
                 image: "/placeholder.svg?height=100&width=100",
               },
             ].map((testimonial, index) => (

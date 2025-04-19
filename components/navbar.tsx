@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
-              i Digital
+              logo
             </span>
           </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
             ))}
             <Button
               asChild
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full">
+              className="bg-gradient-to-r from-purple-600 to-[#febc05] hover:from-purple-700 hover:to-pink-700 text-white rounded-full">
               <Link href="/contact">Get Started</Link>
             </Button>
           </nav>
@@ -77,7 +77,7 @@ export default function Navbar() {
               ))}
               <Button
                 asChild
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full w-full">
+                className="bg-gradient-to-r from-purple-600 to-[#febc05] hover:from-purple-700 hover:to-pink-700 text-white rounded-full w-full">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                   Get Started
                 </Link>

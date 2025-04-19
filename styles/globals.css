@@ -92,3 +92,22 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-180px * 33)
+    ); /* Adjust based on item width and count */
+  }
+}
+
+.animate-carousel {
+  animation: scroll 60s linear infinite;
+}
+
+.animate-pause {
+  animation-play-state: paused;
+}
