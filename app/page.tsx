@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/social.JPG"
+            src="/heroe.JPG"
             alt="Digital Marketing Background"
             fill
             className="object-cover opacity"
@@ -401,9 +401,9 @@ export default function Home() {
       </ScrollReveal>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-[#280348] to-[#febc05] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1920')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-pink-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#febc05] rounded-full opacity-20 blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
 
         <div className="container relative z-10 px-4 md:px-6 text-center">
